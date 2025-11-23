@@ -62,3 +62,23 @@ me@amadeus:~$ python3 -q
 >>> 
 me@amadeus:~$
 ```
+# Extra Light
+
+```Python
+me@amadeus:~$ python3 -q
+>>> def exp(x):
+...     prod = a = 1
+...     for i in range(1, 30):
+...             prod *= x/i
+...             a += prod
+...     return a
+... 
+>>> x = 3
+>>> for i in range(3):
+...     x += exp(x * 1j).imag
+... 
+>>> x
+3.141592653589793
+>>> 
+me@amadeus:~$
+```
