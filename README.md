@@ -82,3 +82,25 @@ me@amadeus:~$ python3 -q
 >>> 
 me@amadeus:~$
 ```
+# Using custom sin(x)
+
+```Python
+me@amadeus:~$ python3 -q
+>>> def sin(x):
+...     prod = 1; a = 0
+...     for i in range(1, 30):
+...             prod *= x/i
+...             if i % 2 == 0: continue
+...             a += prod
+...             prod *= -1
+...     return a
+... 
+>>> x = 3
+>>> for i in range(3):
+...     x += sin(x)
+... 
+>>> x
+3.141592653589793
+>>> 
+me@amadeus:~$
+```
