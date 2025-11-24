@@ -104,3 +104,25 @@ me@amadeus:~$ python3 -q
 >>> 
 me@amadeus:~$
 ```
+# Using custom cos(x)
+
+```Python
+me@amadeus:~$ python3 -q
+>>> def cos(x):
+...     prod = a = 1
+...     for i in range(1, 30):
+...             prod *= x/i
+...             if i % 2 != 0: continue
+...             prod *= -1
+...             a += prod
+...     return a
+... 
+>>> x = 1.5
+>>> for i in range(3):
+...     x += cos(x)
+... 
+>>> 2 * x
+3.1415926535897936
+>>> 
+me@amadeus:~$
+```
