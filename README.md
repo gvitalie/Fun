@@ -80,6 +80,13 @@ me@amadeus:~$ python3 -q
 >>> x
 3.141592653589793
 >>> 
+>>> x = 1.5
+>>> for i in range(3):
+...     x += exp(x * 1j).real
+... 
+>>> 2 * x
+3.1415926535897936
+>>> 
 me@amadeus:~$
 ```
 # Using custom sin(x)
