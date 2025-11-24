@@ -73,19 +73,19 @@ me@amadeus:~$ python3 -q
 ...             a += prod
 ...     return a
 ... 
->>> x = 3
->>> for i in range(3):
-...     x += exp(x * 1j).imag
-... 
->>> x
-3.141592653589793
->>> 
 >>> x = 1.5
 >>> for i in range(3):
 ...     x += exp(x * 1j).real
 ... 
 >>> 2 * x
 3.1415926535897936
+>>> 
+>>> x = 3
+>>> for i in range(3):
+...     x += exp(x * 1j).imag
+... 
+>>> x
+3.141592653589793
 >>> 
 me@amadeus:~$
 ```
