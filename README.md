@@ -133,3 +133,32 @@ me@amadeus:~$ python3 -q
 >>> 
 me@amadeus:~$
 ```
+# 100 correct digits of π value using e^x
+
+```Python
+me@amadeus:~$ cd Tutor/test/
+me@amadeus:~/Tutor/test$ source bin/activate
+(test) me@amadeus:~/Tutor/test$ python3 -q
+>>> from mpmath import mp
+>>> 
+>>> mp.dps = 100
+>>> 
+>>> ρ = (mp.mpf(14) - mp.mpf(2) ** mp.mpf(0.5))/mp.mpf(4)
+>>> print(ρ)
+3.146446609406726237799577818947575480357582031155762981705830065502316880384473240287403116418089607
+>>> 
+>>> x = mp.mpf(3)
+>>> for i in range(5):
+...     x += mp.exp(mp.mpc(0, x)).imag
+... 
+>>> print(x)
+3.141592653589793238462643383279502884197169399375105820974944592307816406286208998628034825342117068
+>>> print(mp.pi)
+3.141592653589793238462643383279502884197169399375105820974944592307816406286208998628034825342117068
+>>> print(x - mp.pi)
+0.0
+>>> 
+(test) me@amadeus:~/Tutor/test$ deactivate 
+me@amadeus:~/Tutor/test$ cd
+me@amadeus:~$
+```
