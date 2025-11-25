@@ -158,6 +158,5 @@ me@amadeus:~$
 1.0
 >>> 
 (test) me@amadeus:~/Tutor/test$
-me@amadeus:~$
 ```
 [mpmath - Python library for arbitrary-precision floating-point arithmetic: https://mpmath.org/](https://mpmath.org/)
