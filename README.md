@@ -133,7 +133,7 @@ me@amadeus:~$ python3 -q
 >>> 
 me@amadeus:~$
 ```
-# 100 correct digits of π and ρ value using e^x
+# 100 correct digits of π value using e^x
 
 ```Python
 (test) me@amadeus:~/Tutor/test$ python3 -q
