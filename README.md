@@ -158,8 +158,6 @@ me@amadeus:~$
 1.0
 >>> 
 (test) me@amadeus:~/Tutor/test$
->>> 
-(test) me@amadeus:~/Tutor/test$ deactivate && cd
 me@amadeus:~$
 ```
 [mpmath - Python library for arbitrary-precision floating-point arithmetic: https://mpmath.org/](https://mpmath.org/)
