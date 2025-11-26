@@ -1,5 +1,10 @@
 # Fun
-Fun with π^π and π^(1/π)
+
+<img width="1904" height="603" alt="image" src="https://github.com/user-attachments/assets/5282843d-bace-431b-8e96-5bfb4491cc73" />
+<img width="1495" height="330" alt="image" src="https://github.com/user-attachments/assets/6085c704-b45a-4679-ad87-3fd336c8bf8f" />
+<img width="1763" height="580" alt="image" src="https://github.com/user-attachments/assets/903ad609-e8da-480b-9372-79d7bf34cb78" />
+
+# Fun with π^π and π^(1/π)
 
 ```Python
 me@amadeus:~$ python3 -q
