@@ -155,3 +155,33 @@ me@amadeus:~$ cd Tutor/test && source bin/activate
 ```
 
 [mpmath - Python library for arbitrary-precision floating-point arithmetic: https://mpmath.org/](https://mpmath.org/)
+
+# Calculating only tail of 🍌🐒
+
+```Python
+me@amadeus:~$ python3 -q
+>>> def exp(x):
+...     prod = a = 1
+...     for i in range(1, 30):
+...             prod *= x/i
+...             a += prod
+...     return a
+... 
+>>> x = 0
+>>> for i in range(10):
+...     x += exp((x + 3) * 1j).imag
+...     print(x)
+... 
+0.14112000805986716
+0.1415926535721955
+0.14159265358979284
+0.1415926535897932
+0.14159265358979353
+0.14159265358979342
+0.1415926535897933
+0.14159265358979364
+0.14159265358979353
+0.14159265358979342
+>>> 
+me@amadeus:~$
+```
