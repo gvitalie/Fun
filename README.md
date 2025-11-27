@@ -4,6 +4,22 @@
 <img width="1495" height="330" alt="image" src="https://github.com/user-attachments/assets/6085c704-b45a-4679-ad87-3fd336c8bf8f" />
 <img width="1763" height="580" alt="image" src="https://github.com/user-attachments/assets/903ad609-e8da-480b-9372-79d7bf34cb78" />
 
+# 🫖☕🍰
+
+```Python
+me@amadeus:~$ python3 -q
+>>> import math
+>>> 
+>>> x = 0
+>>> for i in range(3):
+...     x += math.sin(x + 3)
+... 
+>>> x
+0.141592653589793
+>>> 
+me@amadeus:~$
+```
+
 # Fun with π^π and π^(1/π)
 
 ```Python
