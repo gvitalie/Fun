@@ -10,11 +10,11 @@
 me@amadeus:~$ python3 -q
 >>> import math
 >>> 
->>> x = 0
+>>> φ = 0
 >>> for i in range(3):
-...     x += math.sin(x + 3)
+...     φ += math.sin(3 + φ)
 ... 
->>> x
+>>> φ
 0.141592653589793🍯🐝🌻
 >>> 
 me@amadeus:~$
