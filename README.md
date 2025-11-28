@@ -7,10 +7,6 @@
 # 🫖☕🍰
 
 ```Python
-The meaning 🥰: 
-φ is kind of flower as fixed point. 
-φ value is kind of flower smell, transcendent.
-
 me@amadeus:~$ python3 -q
 >>> import math
 >>> 
