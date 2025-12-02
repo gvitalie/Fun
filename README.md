@@ -89,13 +89,15 @@ me@amadeus:~$
 
 ```Python
 me@amadeus:~$ python3 -q
+>>> # define experience
 >>> def exp(x):
 ...     prod = a = 1
 ...     for i in range(1, 30):
-...             prod *= x/i
+...             prod *= x / i
 ...             a += prod
 ...     return a
 ... 
+>>> # define reality
 >>> x = 1.5
 >>> for i in range(3):
 ...     x += exp(x * 1j).real
@@ -103,6 +105,7 @@ me@amadeus:~$ python3 -q
 >>> 2 * x
 3.1415926535897936
 >>> 
+>>> # define imagination
 >>> x = 3
 >>> for i in range(3):
 ...     x += exp(x * 1j).imag
@@ -110,7 +113,7 @@ me@amadeus:~$ python3 -q
 >>> x
 3.141592653589793
 >>> 
-me@amadeus:~$
+me@amadeus:~$ 
 ```
 # Using custom sin(x)
 
