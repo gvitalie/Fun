@@ -1,5 +1,8 @@
 # Fun
 
+# 🇺🇦😇🇷🇺
+
+<img width="1037" height="476" alt="image" src="https://github.com/user-attachments/assets/3f6c24f0-ca30-4d1e-ba43-45a868cddc60" />
 <img width="1681" height="670" alt="image" src="https://github.com/user-attachments/assets/71147ae1-50c7-473b-988b-a90cd4d57a06" />
 <img width="1495" height="330" alt="image" src="https://github.com/user-attachments/assets/6085c704-b45a-4679-ad87-3fd336c8bf8f" />
 <img width="1763" height="580" alt="image" src="https://github.com/user-attachments/assets/903ad609-e8da-480b-9372-79d7bf34cb78" />
