@@ -182,7 +182,7 @@ me@amadeus:~$ cd Tutor/test && source bin/activate
 
 [mpmath - Python library for arbitrary-precision floating-point arithmetic: https://mpmath.org/](https://mpmath.org/)
 
-# Calculating only tail of 🍌🐒
+# Calculating only tail of 🌴🍌🐒
 
 ```Python
 me@amadeus:~$ python3 -q
