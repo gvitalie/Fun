@@ -136,6 +136,25 @@ me@amadeus:~$ python3 -q
 3.141592653589793
 >>> 
 me@amadeus:~$
+
+me@amadeus:~$ python3 -q
+>>> def sin(x):
+...     prod = 1; a = 0
+...     for i in range(1, 30):
+...             prod *= x / i
+...             if i % 2 == 0: continue
+...             a += prod
+...             prod *= -1
+...     return a
+... 
+>>> φ = 0
+>>> for i in range(3):
+...     φ += sin(3 + φ)
+... 
+>>> print(f"{φ:.15}")
+0.141592653589793
+>>> 
+me@amadeus:~$
 ```
 # Using custom cos(x)
 
