@@ -1,10 +1,5 @@
 # Fun 💩
 
-🪦🥕☠️  
-Еў н-ам.  
-Еў нў кўноск.  
-Еў нў пот.  
-
 <img width="1904" height="603" alt="Aa" src="https://github.com/user-attachments/assets/e57661d1-50f5-4c87-bce3-c768880de750" />
 <img width="1495" height="330" alt="image" src="https://github.com/user-attachments/assets/6085c704-b45a-4679-ad87-3fd336c8bf8f" />
 <img width="1763" height="580" alt="image" src="https://github.com/user-attachments/assets/903ad609-e8da-480b-9372-79d7bf34cb78" />
@@ -244,7 +239,4 @@ me@amadeus:~$
 >>> 
 (test) me@amadeus:~/Tutor/test$
 ```
-🪦🥕☠️  
-Еў н-ам.  
-Еў нў кўноск.  
-Еў нў пот.  
+
