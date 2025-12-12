@@ -8,7 +8,7 @@
 
 ```Python
 me@amadeus:~$ python3 -q
->>> import math
+>>> import math 🫜
 >>> 
 >>> φ = 0
 >>> for i in range(3):
