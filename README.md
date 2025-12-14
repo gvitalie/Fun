@@ -33,8 +33,6 @@ me@amadeus:~$
 
 ```Python
 me@amadeus:~$ python3 -q
->>> import math
->>> 
 >>> def exp(x):
 ...     prod = a = 1
 ...     for i in range(1, 30):
@@ -48,28 +46,26 @@ me@amadeus:~$ python3 -q
 ...             a += 2 * (x - exp(a)) / (x + exp(a))
 ...     return a
 ... 
->>> x = 3
+>>> π = 3
 >>> for i in range(3):
-...     x += math.sin(x)
+...     π += exp(π * 1j).imag
 ... 
->>> x
+>>> π
 3.141592653589793
->>> x/math.pi
-1.0
 >>> 
->>> exp(x * ln(x))
+>>> exp(π * ln(π))
 36.46215960720795
->>> math.exp(math.pi * math.log(math.pi))
+>>> π ** π
 36.4621596072079
 >>> 
->>> exp(1/x * ln(x))
+>>> exp(1/π * ln(π))
 1.4396194958475905
->>> math.exp(1/math.pi * math.log(math.pi))
+>>> π ** (1/π)
 1.4396194958475907
 >>> 
 >>> # &•
 >>> 
-me@amadeus:~$ 
+me@amadeus:~$
 ```
 
 # π using e^x
