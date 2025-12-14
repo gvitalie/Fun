@@ -37,14 +37,14 @@ me@amadeus:~$ python3 -q
 >>> 
 >>> def exp(x):
 ...     prod = a = 1
-...     for i in range(1, 100):
+...     for i in range(1, 30):
 ...             prod *= x / i
 ...             a += prod
 ...     return a
 ... 
 >>> def ln(x):
 ...     a = 0
-...     for i in range(100):
+...     for i in range(30):
 ...             a += 2 * (x - exp(a)) / (x + exp(a))
 ...     return a
 ... 
