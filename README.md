@@ -36,9 +36,10 @@ me@amadeus:~$ python3 -q
 >>> import math
 >>> 
 >>> def exp(x):
-...     a = 1
+...     prod = a = 1
 ...     for i in range(1, 100):
-...             a += (x ** i) / math.factorial(i)
+...             prod *= x / i
+...             a += prod
 ...     return a
 ... 
 >>> def ln(x):
