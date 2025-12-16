@@ -258,3 +258,32 @@ me@amadeus:~$ cd Tutor/test && source bin/activate
 ```
 
 [mpmath - Python library for arbitrary-precision floating-point arithmetic: https://mpmath.org/](https://mpmath.org/)
+
+# Iterative method to calculate arcsin(x) using trigonometric functions.
+
+```Python
+me@amadeus:~$ python3 -q
+>>> import math
+>>> 
+>>> x = 1/2
+>>> math.asin(x)
+0.5235987755982989
+>>> 
+>>> y = 0
+>>> for i in range(10):
+...     y -= (math.sin(y) - x) / math.cos(y)
+...     print(y)
+... 
+0.5
+0.523444473818484
+0.5235987687270579
+0.5235987755982988
+0.5235987755982989
+0.5235987755982989
+0.5235987755982989
+0.5235987755982989
+0.5235987755982989
+0.5235987755982989
+>>> 
+me@amadeus:~$
+```
