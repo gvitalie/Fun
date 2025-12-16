@@ -259,7 +259,7 @@ me@amadeus:~$ cd Tutor/test && source bin/activate
 
 [mpmath - Python library for arbitrary-precision floating-point arithmetic: https://mpmath.org/](https://mpmath.org/)
 
-# Iterative method to calculate arcsin(x) using trigonometric functions.
+## Iterative method to calculate arcsin(x) using trigonometric functions.
 
 ```Python
 me@amadeus:~$ python3 -q
