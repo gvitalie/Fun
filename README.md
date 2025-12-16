@@ -316,3 +316,28 @@ me@amadeus:~$ python3 -q
 >>> 
 me@amadeus:~$
 ```
+# arccos(x) = π/2 - arcsin(x)
+
+```Python
+me@amadeus:~$ python3 -q
+>>> import math
+>>> 
+>>> x = 1/2
+>>> math.asin(x)
+0.5235987755982989
+>>> math.acos(x)
+1.0471975511965979
+>>> math.pi/2 - math.asin(x)
+1.0471975511965976
+>>> 
+>>> y = 0
+>>> for _ in range(5):
+...     y -= (math.sin(y) - x) / math.cos(y)
+... 
+>>> y
+0.5235987755982989
+>>> math.pi/2 - y
+1.0471975511965976
+>>> 
+me@amadeus:~$
+```
