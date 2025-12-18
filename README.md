@@ -29,7 +29,7 @@ me@amadeus:~$
 
 [Part 1: Zero is odd or even number? | by Aa | Medium:](https://medium.com/@gvitalie/part-1-zero-is-odd-or-even-number-6e316b04bcbd)
 
-# Fun with π^π and π^(1/π)
+# Fun with π and π^(1/2) and π^π and π^(1/π)
 
 ```Python
 me@amadeus:~$ python3 -q
