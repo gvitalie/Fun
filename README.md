@@ -73,28 +73,7 @@ me@amadeus:~$ python3 -q
 me@amadeus:~$
 ```
 
-# π using e^x
-
-```Python
-me@amadeus:~$ python3 -q
->>> import math
->>> 
->>> def exp(x):
-...     a = 1
-...     for i in range(1, 30):
-...             a += (x ** i) / math.factorial(i)
-...     return a
-... 
->>> x = 3
->>> for i in range(3):
-...     x += exp(x * 1j).imag
-... 
->>> x
-3.141592653589793
->>> 
-me@amadeus:~$
-```
-# Extra Light
+# Extra Light e^x calculate π
 
 ```Python
 me@amadeus:~$ python3 -q
