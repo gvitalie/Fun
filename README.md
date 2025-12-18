@@ -86,7 +86,7 @@ me@amadeus:~$ python3 -q
 ...     return a
 ... 
 >>> # define reality
->>> x = 1.5
+>>> x = 3/2
 >>> for i in range(3):
 ...     x += exp(x * 1j).real
 ... 
