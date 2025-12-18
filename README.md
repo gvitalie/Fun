@@ -124,7 +124,7 @@ me@amadeus:~$ python3 -q
 >>> 
 me@amadeus:~$ 
 ```
-# Using custom sin(x)
+# Using custom sin(x) and cos(x)
 
 ```Python
 me@amadeus:~$ python3 -q
@@ -137,48 +137,28 @@ me@amadeus:~$ python3 -q
 ...             a += prod
 ...     return 1 - a
 ... 
->>> x = 3
->>> for i in range(3):
-...     x += sin(x)
-... 
->>> x
-3.141592653589793
->>> 
->>> φ = 0
->>> for i in range(3):
-...     φ += sin(3 + φ)
-... 
->>> print(f"{φ:.15}")
-0.141592653589793
->>> 
-me@amadeus:~$
-```
-# Using custom cos(x)
-
-```Python
-me@amadeus:~$ python3 -q
 >>> def cos(x):
 ...     prod = a = 1
 ...     for i in range(1, 30):
-...             prod *= x/i
+...             prod *= x / i
 ...             if i % 2 != 0: continue
 ...             prod *= -1
 ...             a += prod
 ...     return a
 ... 
->>> x = 1.5
->>> for i in range(3):
-...     x += cos(x)
+>>> ε = 0
+>>> for _ in range(3):
+...     ε += sin(3 + ε)
 ... 
->>> 2 * x
-3.1415926535897936
+>>> ε
+0.14159265358979323
 >>> 
->>> φ = 0
->>> for i in range(3):
-...     φ += cos(3/2 + φ)
+>>> ε = 0
+>>> for _ in range(3):
+...     ε += cos(3/2 + ε)
 ... 
->>> print(f"{2 * φ:.15}")
-0.141592653589793
+>>> 2 * ε
+0.1415926535897935
 >>> 
 me@amadeus:~$
 ```
