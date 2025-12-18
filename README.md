@@ -129,13 +129,13 @@ me@amadeus:~$
 ```Python
 me@amadeus:~$ python3 -q
 >>> def sin(x):
-...     prod = 1; a = 0
+...     prod = a = 1
 ...     for i in range(1, 30):
-...             prod *= x/i
+...             prod *= x / i
 ...             if i % 2 == 0: continue
-...             a += prod
 ...             prod *= -1
-...     return a
+...             a += prod
+...     return 1 - a
 ... 
 >>> x = 3
 >>> for i in range(3):
