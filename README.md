@@ -305,8 +305,9 @@ me@amadeus:~$ python3 -q
 >>> 
 me@amadeus:~$
 ```
+<img width="514" height="636" alt="image" src="https://github.com/user-attachments/assets/4ce4dd43-b456-4a62-b162-e5167bdd74d3" />
 
-# Define 🙏💻: root as root(x, k); linux as ln(x); expert experience as exp(x)
+## Define 🙏💻: root as root(x, k); linux as ln(x); expert experience as exp(x)
 
 ```Python
 me@amadeus:~$ python3 -q
