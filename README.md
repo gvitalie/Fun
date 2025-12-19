@@ -305,3 +305,63 @@ me@amadeus:~$ python3 -q
 >>> 
 me@amadeus:~$
 ```
+
+# Define 🙏💻: root as root(x, k); linux as ln(x); expert experience as exp(x)
+
+```Python
+me@amadeus:~$ python3 -q
+>>> def exp(x):
+...     prod = a = 1
+...     for i in range(1, 30):
+...             prod *= x / i
+...             a += prod
+...     return a
+... 
+>>> def ln(x):
+...     a = 0
+...     for _ in range(30):
+...             a += 2 * (x - exp(a)) / (x + exp(a))
+...     return a
+... 
+>>> def root(x, k):
+...     a = 2
+...     for _ in range(30):
+...             a -= (a ** k - x) / (k * a ** (k - 1))
+...     return a
+... 
+>>> # define Case as Doubling the Cube
+>>> exp(1/3 * ln(2))
+1.2599210498948732
+>>> root(2, 3)
+1.2599210498948732
+>>> 2 ** (1/3)
+1.2599210498948732
+>>> 
+>>> # TestCase
+>>> 1.2599210498948732 * 1.2599210498948732 * 1.2599210498948732
+2.0
+>>> 
+>>> # define Linux OS as π and square root of π.
+>>> ε = 0
+>>> for _ in range(3):
+...     ε += exp((3 + ε) * 1j).imag
+... 
+>>> ε
+0.14159265358979284
+>>> 
+>>> π = 3
+>>> for _ in range(3):
+...     π += exp(π * 1j).imag
+... 
+>>> π
+3.141592653589793
+>>> 
+>>> exp(1/2 * ln(π))
+1.7724538509055163
+>>> π ** (1/2)
+1.7724538509055159
+>>> 
+>>> # &• 🫜
+>>> 
+me@amadeus:~$
+```
