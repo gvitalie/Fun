@@ -11,14 +11,14 @@ me@amadeus:~$ python3 -q
 >>> import math 🫜
 >>> 
 >>> φ = 0
->>> for i in range(3):
+>>> for _ in range(3):
 ...     φ += math.cos(3/2 + φ)
 ... 
 >>> print(f"{2 * φ:.15}")
 0.141592653589793🌻🐝🍯
 >>> 
 >>> φ = 0
->>> for i in range(3):
+>>> for _ in range(3):
 ...     φ += math.sin(3 + φ)
 ... 
 >>> print(f"{φ:.15}")
@@ -42,7 +42,7 @@ me@amadeus:~$ python3 -q
 ... 
 >>> def ln(x):
 ...     a = 0
-...     for i in range(30):
+...     for _ in range(30):
 ...             a += 2 * (x - exp(a)) / (x + exp(a))
 ...     return a
 ... 
@@ -87,7 +87,7 @@ me@amadeus:~$ python3 -q
 ... 
 >>> # define reality
 >>> x = 3/2
->>> for i in range(3):
+>>> for _ in range(3):
 ...     x += exp(x * 1j).real
 ... 
 >>> 2 * x
@@ -95,7 +95,7 @@ me@amadeus:~$ python3 -q
 >>> 
 >>> # define imagination
 >>> x = 3
->>> for i in range(3):
+>>> for _ in range(3):
 ...     x += exp(x * 1j).imag
 ... 
 >>> x
@@ -154,7 +154,7 @@ me@amadeus:~$ python3 -q
 ...     return a
 ... 
 >>> x = 0
->>> for i in range(10):
+>>> for _ in range(10):
 ...     x += exp((x + 3) * 1j).imag
 ...     print(x)
 ... 
@@ -180,7 +180,7 @@ me@amadeus:~$
 >>> mp.dps = 50
 >>> 
 >>> x = mp.mpf(0)
->>> for i in range(10):
+>>> for _ in range(10):
 ...     x += mp.exp(mp.mpc(0, (x + 3))).imag
 ...     print(x)
 ... 
@@ -210,7 +210,7 @@ me@amadeus:~$ cd Tutor/test && source bin/activate
 >>> mp.dps = 1000
 >>> 
 >>> x = mp.mpf(3)
->>> for i in range(7):
+>>> for _ in range(7):
 ...     x += mp.exp(mp.mpc(0, x)).imag
 ... 
 >>> print(x/mp.pi)
@@ -234,7 +234,7 @@ me@amadeus:~$ python3 -q
 0.5235987755982989
 >>> 
 >>> y = 0
->>> for i in range(10):
+>>> for _ in range(10):
 ...     y -= (math.sin(y) - x) / math.cos(y)
 ...     print(y)
 ... 
