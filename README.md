@@ -114,7 +114,7 @@ me@amadeus:~$ python3 -q
 ...             if i % 2 == 0: continue
 ...             prod *= -1
 ...             a += prod
-...     return 1 - a
+...     return (1 - a)
 ... 
 >>> def cos(x):
 ...     prod = a = 1
