@@ -80,7 +80,7 @@ def sin(x):
         a += prod
     return 1 - a
 
-def pi():
+def happy():
     temp = x = mp.mpf(3)
     while temp > mp.power(10, -mp.dps):
         temp = sin(x)
@@ -90,7 +90,7 @@ def pi():
 for _ in range(10, 100, 10):
     # set π precision
     mp.dps = _
-    print(mp.dps, pi())
+    print(mp.dps, happy())
     print(mp.dps, mp.pi)
 ```
 ```Python
