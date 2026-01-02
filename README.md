@@ -34,6 +34,7 @@ me@amadeus:~$
 ```Python
 from mpmath import mp
 
+# set π precision
 mp.dps = 50
 
 def sin(x):
