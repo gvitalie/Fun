@@ -42,7 +42,7 @@ def sin(x):
     for i in range(1, mp.dps):
         prod *= x / mp.mpf(i)
         if i % 2 == 0: continue
-        prod *= mp.mpf(-1)
+        prod *= -1
         a += prod
     return 1 - a
 
