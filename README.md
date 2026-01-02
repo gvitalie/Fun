@@ -87,6 +87,52 @@ Process finished with exit code 0
 import time
 from mpmath import mp
 
+def sin(x):
+    prod = a = mp.mpf(1)
+    iterations = mp.dps if mp.dps > 100 else mp.dps + 30
+    for i in range(1, iterations):
+        prod *= x / mp.mpf(i)
+        if i % 2 == 0: continue
+        prod *= -1
+        a += prod
+    return 1 - a
+
+def happy():
+    temp = x = mp.mpf(3)
+    while temp > mp.power(10, -mp.dps):
+        temp = sin(x)
+        x += temp
+    return x
+
+for _ in range(500, 5500, 500):
+    # set π precision
+    mp.dps = _
+    start = time.perf_counter()
+    happy()
+    end = time.perf_counter()
+    print(f"{mp.dps:>10} {end-start}")
+```
+
+```Python
+/home/me/Pycharm/AI/.venv/bin/python /home/me/Pycharm/AI/Aa.py 
+       500 0.07455543100000739
+      1000 0.3342067100000037
+      1500 0.5286150510000027
+      2000 1.0446297330000078
+      2500 1.8774502830000017
+      3000 3.020282698999992
+      3500 4.500127178
+      4000 6.477378732000005
+      4500 9.155126764999991
+      5000 13.157397107000008
+
+Process finished with exit code 0
+```
+
+```Python
+import time
+from mpmath import mp
+
 def happy():
     temp = x = mp.mpf(3)
     while temp > mp.power(10, -mp.dps):
