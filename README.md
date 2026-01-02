@@ -29,7 +29,7 @@ me@amadeus:~$
 
 [Part 1: Zero is odd or even number? | by Aa | Medium:](https://medium.com/@gvitalie/part-1-zero-is-odd-or-even-number-6e316b04bcbd)
 
-# Arbitrary precision floating point
+# π with arbitrary precision floating point
 
 ```Python
 from mpmath import mp
