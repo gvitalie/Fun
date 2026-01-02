@@ -35,11 +35,12 @@ me@amadeus:~$
 from mpmath import mp
 
 # set π precision
-mp.dps = 80
+mp.dps = 50
 
 def sin(x):
     prod = a = mp.mpf(1)
-    for i in range(1, mp.dps + 30):
+    iterations = mp.dps if mp.dps >= 100 else mp.dps + 30
+    for i in range(1, iterations):
         prod *= x / mp.mpf(i)
         if i % 2 == 0: continue
         prod *= -1
