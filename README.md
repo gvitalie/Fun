@@ -48,7 +48,7 @@ def sin(x):
 
 temp = x = mp.mpf(3)
 while temp > mp.power(10, -mp.dps):
-    temp = mp.sin(x)
+    temp = sin(x)
     x += temp
 
 print(x / mp.pi)
