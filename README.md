@@ -34,42 +34,6 @@ me@amadeus:~$
 ```Python
 from mpmath import mp
 
-# set π precision
-mp.dps = 50
-
-def sin(x):
-    prod = a = mp.mpf(1)
-    iterations = mp.dps if mp.dps > 100 else mp.dps + 30
-    for i in range(1, iterations):
-        prod *= x / mp.mpf(i)
-        if i % 2 == 0: continue
-        prod *= -1
-        a += prod
-    return 1 - a
-
-temp = x = mp.mpf(3)
-while temp > mp.power(10, -mp.dps):
-    temp = sin(x)
-    x += temp
-
-print(x / mp.pi)
-print(x)
-print(mp.pi)
-```
-
-```Python
-/home/me/PycharmProjects/AI/.venv/bin/python /home/me/PycharmProjects/AI/Aa.py 
-1.0
-3.1415926535897932384626433832795028841971693993751
-3.1415926535897932384626433832795028841971693993751
-
-Process finished with exit code 0
-```
-# FreeStyle
-
-```Python
-from mpmath import mp
-
 def sin(x):
     prod = a = mp.mpf(1)
     iterations = mp.dps if mp.dps > 100 else mp.dps + 30
