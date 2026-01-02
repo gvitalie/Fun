@@ -29,6 +29,41 @@ me@amadeus:~$
 
 [Part 1: Zero is odd or even number? | by Aa | Medium:](https://medium.com/@gvitalie/part-1-zero-is-odd-or-even-number-6e316b04bcbd)
 
+# Arbitrary precision floating point
+
+```Python
+from mpmath import mp
+
+mp.dps = 100
+
+def sin(x):
+    prod = a = mp.mpf(1)
+    for i in range(1, mp.dps):
+        prod *= x / mp.mpf(i)
+        if i % 2 == 0: continue
+        prod *= mp.dpf(-1)
+        a += prod
+    return 1 - a
+
+temp = x = mp.mpf(3)
+while temp > mp.power(10, -mp.dps):
+    temp = mp.sin(x)
+    x += temp
+
+print(x / mp.pi)
+print(x)
+print(mp.pi)
+```
+
+```Python
+/home/me/PycharmProjects/AI/.venv/bin/python /home/me/PycharmProjects/AI/Aa.py 
+1.0
+3.141592653589793238462643383279502884197169399375105820974944592307816406286208998628034825342117068
+3.141592653589793238462643383279502884197169399375105820974944592307816406286208998628034825342117068
+
+Process finished with exit code 0
+```
+
 # Fun with π and π^(1/2) and π^π and π^(1/π)
 
 ```Python
