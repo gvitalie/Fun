@@ -39,7 +39,7 @@ mp.dps = 80
 
 def sin(x):
     prod = a = mp.mpf(1)
-    for i in range(1, mp.dps):
+    for i in range(1, mp.dps + 30):
         prod *= x / mp.mpf(i)
         if i % 2 == 0: continue
         prod *= -1
@@ -59,8 +59,8 @@ print(mp.pi)
 ```Python
 /home/me/PycharmProjects/AI/.venv/bin/python /home/me/PycharmProjects/AI/Aa.py 
 1.0
-3.141592653589793238462643383279502884197169399375105820974944592307816406286209
-3.141592653589793238462643383279502884197169399375105820974944592307816406286209
+3.1415926535897932384626433832795028841971693993751
+3.1415926535897932384626433832795028841971693993751
 
 Process finished with exit code 0
 ```
