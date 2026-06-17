@@ -29,57 +29,6 @@ me@amadeus:~$
 
 [Part 1: Zero is odd or even number? | by Aa | Medium:](https://medium.com/@gvitalie/part-1-zero-is-odd-or-even-number-6e316b04bcbd)
 
-# 🌐
-
-```Python
-me@amadeus:~$ python3 -q # 🐍
->>> def exp(x):
-...     prod = a = 1
-...     for i in range(1, 30):
-...             prod *= x / i
-...             a += prod
-...     return a
-... 
->>> def ln(x):
-...     a = 0
-...     for _ in range(1, 30):
-...             a -= 1 - x / exp(a)
-...     return a
-... 
->>> def sin(x):
-...     prod = a = 1
-...     for i in range(1, 30):
-...             prod *= x / i
-...             if not i & 1: continue
-...             prod *= -1
-...             a += prod
-...     return 1 - a
-... 
->>> x = 3
->>> for _ in range(3):
-...     x += sin(x)
-... 
->>> x
-3.141592653589793
->>> 
->>> exp(1/x * ln(x))
-1.4396194958475905
->>> x ** (1/x)
-1.4396194958475907
->>> 
->>> exp(x * ln(x))
-36.46215960720795
->>> x ** x
-36.4621596072079
->>> 
->>> exp(1/3 * ln(2))
-1.2599210498948732
->>> 2 ** (1/3)
-1.2599210498948732
->>> 
-me@amadeus:~$
-```
-
 # π with arbitrary precision floating point
 
 ```Python
@@ -249,8 +198,8 @@ me@amadeus:~$ python3 -q
 ... 
 >>> def ln(x):
 ...     a = 0
-...     for _ in range(30):
-...             a += 2 * (x - exp(a)) / (x + exp(a))
+...     for _ in range(1, 30):
+...             a -= 1 - x / exp(a)
 ...     return a
 ... 
 >>> π = 3
@@ -527,8 +476,8 @@ me@amadeus:~$ python3 -q
 ... 
 >>> def ln(x):
 ...     a = 0
-...     for _ in range(30):
-...             a += 2 * (x - exp(a)) / (x + exp(a))
+...     for _ in range(1, 30):
+...             a -= 1 - x / exp(a)
 ...     return a
 ... 
 >>> def root(x, k):
@@ -570,6 +519,51 @@ me@amadeus:~$ python3 -q
 1.7724538509055159
 >>> 
 >>> # &• 🫜
+>>> 
+me@amadeus:~$
+```
+# Halley method to calculate ln(x)
+
+```Python
+me@amadeus:~$ python3 -q # 🐍
+>>> def exp(x):
+...     prod = a = 1
+...     for i in range(1, 30):
+...             prod *= x / i
+...             a += prod
+...     return a
+... 
+>>> def ln(x):
+...     a = 0
+...     for _ in range(1, 30):
+...             a += 2 * (x - exp(a)) / (x + exp(a))
+...     return a
+... 
+>>> def sin(x):
+...     prod = a = 1
+...     for i in range(1, 30):
+...             prod *= x / i
+...             if not i & 1: continue
+...             prod *= -1
+...             a += prod
+...     return 1 - a
+... 
+>>> x = 3
+>>> for _ in range(3):
+...     x += sin(x)
+... 
+>>> x
+3.141592653589793 🕊️
+>>> 
+>>> exp(1/x * ln(x))
+1.4396194958475905 🌈 
+>>> x ** (1/x)
+1.4396194958475907 🌈
+>>> 
+>>> exp(x * ln(x))
+36.46215960720798 🌈
+>>> x ** x
+36.4621596072079 🌈
 >>> 
 me@amadeus:~$
 ```
