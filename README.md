@@ -199,7 +199,7 @@ me@amadeus:~$ python3 -q
 >>> def ln(x):
 ...     a = 0
 ...     for _ in range(1, 30):
-...             a += 2 * (x - exp(a)) / (x + exp(a))
+...             a -= 1 - x / exp(a)
 ...     return a
 ... 
 >>> π = 3
@@ -477,7 +477,7 @@ me@amadeus:~$ python3 -q
 >>> def ln(x):
 ...     a = 0
 ...     for _ in range(1, 30):
-...             a += 2 * (x - exp(a)) / (x + exp(a))
+...             a -= 1 - x / exp(a)
 ...     return a
 ... 
 >>> def root(x, k):
