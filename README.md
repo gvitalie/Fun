@@ -1,5 +1,36 @@
 # Fun 💩🖤🫜
 
+**So, I have these questions to test AI intelligence:**
+
+* [ ]  *select numbers **with an odd** count of digits of 3: 13, 100, 111, 222, 331.*
+* [ ]  *select numbers **with an even** count of digits of 3: 13, 100, 111, 222, 331.*
+* [ ]  *select numbers **without an odd** count of digits of 3: 13, 100, 111, 222, 331.*
+* [ ]  *select numbers **without an even** count of digits of 3: 13, 100, 111, 222, 331.*
+* [ ]  *select numbers **without an odd nor an even** count of digits of 3: 13, 100, 111, 222, 331.*
+
+```Python
+def check(n):
+    if not isinstance(n, int):
+        print(f"The value {n} is not an integer value")
+        return None
+    if not n: return (n, "undefined")
+    if n & 1: return (n, "odd")
+    return (n, "even")
+
+
+def check_(n):
+    match n:
+        case _ if not isinstance(n, int):
+            print(f"The value {n} is not an integer value")
+            return None
+        case 0:
+            return (n, "undefined")
+        case _ if n & 1:  
+            return (n, "odd")
+        case _:  
+            return (n, "even")
+```
+
 <img width="1904" height="603" alt="Aa" src="https://github.com/user-attachments/assets/e57661d1-50f5-4c87-bce3-c768880de750" />
 <img width="1495" height="330" alt="image" src="https://github.com/user-attachments/assets/6085c704-b45a-4679-ad87-3fd336c8bf8f" />
 <img width="1763" height="580" alt="image" src="https://github.com/user-attachments/assets/903ad609-e8da-480b-9372-79d7bf34cb78" />
