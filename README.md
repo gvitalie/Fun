@@ -2,11 +2,11 @@
 
 **So, I have these questions to test AI intelligence:**
 
-* [ ]  *select numbers **with an odd** count of digits of 3: 13, 100, 111, 222, 331.*
-* [ ]  *select numbers **with an even** count of digits of 3: 13, 100, 111, 222, 331.*
-* [ ]  *select numbers **without an odd** count of digits of 3: 13, 100, 111, 222, 331.*
-* [ ]  *select numbers **without an even** count of digits of 3: 13, 100, 111, 222, 331.*
-* [ ]  *select numbers **without an odd nor an even** count of digits of 3: 13, 100, 111, 222, 331.*
+1. *select numbers **with an odd** count of digits of 3: 13, 100, 111, 222, 331.*
+1. *select numbers **with an even** count of digits of 3: 13, 100, 111, 222, 331.*
+1. *select numbers **without an odd** count of digits of 3: 13, 100, 111, 222, 331.*
+1. *select numbers **without an even** count of digits of 3: 13, 100, 111, 222, 331.*
+1. *select numbers **without an odd nor an even** count of digits of 3: 13, 100, 111, 222, 331.*
 
 ```Python
 def check(n):
