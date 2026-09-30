@@ -11,18 +11,15 @@
 ```Python
 def check(n):
     if not isinstance(n, int):
-        print(f"The value {n} is not an integer value")
-        return None
+        return f"The value {n!r} is not an integer"
     if not n: return (n, "undefined")
     if n & 1: return (n, "odd")
     return (n, "even")
 
-
 def check_(n):
     match n:
         case _ if not isinstance(n, int):
-            print(f"The value {n} is not an integer value")
-            return None
+            return f"The value {n!r} is not an integer"
         case 0:
             return (n, "undefined")
         case _ if n & 1:  
