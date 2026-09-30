@@ -16,20 +16,16 @@ def check(n):
     if n & 1: return (n, "odd")
     return (n, "even")
 
-def check_ultimate(n):
+def check_(n):
     match n:
-        # Matches only if n is exactly an integer and equals 0
-        case int() if n == 0:
-            return (n, "undefined")
-        # Matches integers that are odd
-        case int() if n & 1:
-            return (n, "odd")
-        # Matches any remaining integers (which must be even)
-        case int():
-            return (n, "even")
-        # Catch-all for non-integers
-        case _:
+        case _ if not isinstance(n, int):
             return f"The value {n!r} is not an integer"
+        case 0:
+            return (n, "undefined")
+        case _ if n & 1:  
+            return (n, "odd")
+        case _:  
+            return (n, "even")
 ```
 
 <img width="1904" height="603" alt="Aa" src="https://github.com/user-attachments/assets/e57661d1-50f5-4c87-bce3-c768880de750" />
