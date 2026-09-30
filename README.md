@@ -664,7 +664,7 @@ def is_prime():
 
     for i in range(3, n, 2):
         q, r = divmod(n, i)
-        if not r: return f'{n} is composite! => {q} * {i}'
+        if not r: return f'{n} is composite! \n=> {q} * {i}'
         if q < i: return f'{n} is prime!'
 
 if __name__ == '__main__':
@@ -702,15 +702,18 @@ Enter an integer: 5
 Enter an integer: 7
 7 is prime!
 Enter an integer: 9
-9 is composite! => 3 * 3
+9 is composite! 
+=> 3 * 3
+Enter an integer: 35
+35 is composite! 
+=> 7 * 5
 Enter an integer: 52
 52 is composite! Even.
-Enter an integer: 55
-55 is composite! => 11 * 5
 Enter an integer: 109
 109 is prime!
 Enter an integer: 111
-111 is composite! => 37 * 3
+111 is composite! 
+=> 37 * 3
 Enter an integer: 
 Bye!
 
