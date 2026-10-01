@@ -677,7 +677,7 @@ if __name__ == '__main__':
             try:
                 n = int(input("Enter an integer: "))
             except ValueError:
-                print(f'It is not an integer!')
+                print(f'It is not an integer!\n')
                 continue
             print(is_prime(n), "\n")
     except KeyboardInterrupt:
@@ -685,7 +685,19 @@ if __name__ == '__main__':
 ```
 
 ```Python
-/home/me/Pycharm/abc/.venv/bin/python /home/me/Pycharm/abc/main.py 
+/home/me/PycharmProjects/abc/.venv/bin/python /home/me/PycharmProjects/abc/main.py 
+Enter an integer: Aa
+It is not an integer!
+
+Enter an integer: None
+It is not an integer!
+
+Enter an integer: False
+It is not an integer!
+
+Enter an integer: True
+It is not an integer!
+
 Enter an integer: -10
 It took 0.00 seconds to run!
 -10 is not a positive integer 
@@ -693,6 +705,13 @@ It took 0.00 seconds to run!
 Enter an integer: 0
 It took 0.00 seconds to run!
 0 is not a positive integer 
+
+Enter an integer: 3.14
+It is not an integer!
+
+Enter an integer: 1
+It took 0.00 seconds to run!
+1 is prime! 
 
 Enter an integer: 35
 It took 0.00 seconds to run!
@@ -707,10 +726,6 @@ Enter an integer: 111
 It took 0.00 seconds to run!
 111 is composite! 
 => 37 * 3 
-
-Enter an integer: 1234567891
-It took 0.01 seconds to run!
-1234567891 is prime! 
 
 Enter an integer: 
 Bye!
