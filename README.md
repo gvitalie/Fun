@@ -649,12 +649,19 @@ me@amadeus:~$
 # Primes and Composites
 
 ```Python
-def is_prime():
-    try:
-        n = int(input("Enter an integer: "))
-    except ValueError:
-        return f'It is not an integer!'
+import time
 
+def time_it(func):
+    def wrapper(*args, **kwargs):
+        start = time.perf_counter()
+        result = func(*args, **kwargs)
+        duration = time.perf_counter() - start
+        print(f'It took {duration:.2f} seconds to run!')
+        return result
+    return wrapper
+
+@time_it
+def is_prime(n):
     if n <= 0: return f'{n} is not a positive integer'
     if n in [1, 2, 3, 5, 7]: return f'{n} is prime!'
     if not n & 1: return f'{n} is composite! Even.'
@@ -667,7 +674,12 @@ def is_prime():
 if __name__ == '__main__':
     try:
         while True:
-            print(is_prime())
+            try:
+                n = int(input("Enter an integer: "))
+            except ValueError:
+                print(f'It is not an integer!')
+                continue
+            print(is_prime(n), "\n")
     except KeyboardInterrupt:
         print("\nBye!")
 ```
@@ -675,42 +687,31 @@ if __name__ == '__main__':
 ```Python
 /home/me/Pycharm/abc/.venv/bin/python /home/me/Pycharm/abc/main.py 
 Enter an integer: -10
--10 is not a positive integer
+It took 0.00 seconds to run!
+-10 is not a positive integer 
+
 Enter an integer: 0
-0 is not a positive integer
-Enter an integer: 3.14
-It is not an integer!
-Enter an integer: A
-It is not an integer!
-Enter an integer: None
-It is not an integer!
-Enter an integer: False
-It is not an integer!
-Enter an integer: True
-It is not an integer!
-Enter an integer: 1
-1 is prime!
-Enter an integer: 2
-2 is prime!
-Enter an integer: 3
-3 is prime!
-Enter an integer: 5
-5 is prime!
-Enter an integer: 7
-7 is prime!
-Enter an integer: 9
-9 is composite! 
-=> 3 * 3
+It took 0.00 seconds to run!
+0 is not a positive integer 
+
 Enter an integer: 35
+It took 0.00 seconds to run!
 35 is composite! 
-=> 7 * 5
-Enter an integer: 52
-52 is composite! Even.
+=> 7 * 5 
+
 Enter an integer: 109
-109 is prime!
+It took 0.00 seconds to run!
+109 is prime! 
+
 Enter an integer: 111
+It took 0.00 seconds to run!
 111 is composite! 
-=> 37 * 3
+=> 37 * 3 
+
+Enter an integer: 1234567891
+It took 0.01 seconds to run!
+1234567891 is prime! 
+
 Enter an integer: 
 Bye!
 
