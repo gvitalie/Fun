@@ -646,6 +646,34 @@ me@amadeus:~$ python3 -q # 🐍
 >>> 
 me@amadeus:~$
 ```
+# That is amazing!
+```Python
+def exp(base, x):
+    a, b = str(x).split(".")
+    c = base
+    result = 1
+    for i in b:
+        base = pow(base, 1/10)
+        result *= base ** int(i)
+    return result * (c ** int(a))
+
+def log(base, x):
+    a = 0.0
+    for _ in range(1, 100):
+        a -= (exp(base, a) - x) / (exp(base, a) + x)
+    return a
+
+print(log(3, 27))
+print(exp(2, log(2, 10)))
+```
+```Python
+/home/me/Pycharm/WelcomeScreen/.venv/bin/python script.py 
+3.0000000000000004
+10.0
+
+Process finished with exit code 0
+```
+
 # Primes and Composites
 
 ```Python
