@@ -677,6 +677,19 @@ def exp(base, x):
         result *= base ** int(i)
     return result
 
+
+def exp_binary(base, x):
+    a, b = int(x), x - int(x)
+    result = base ** a
+    # Repeatedly take square roots instead of 10th roots
+    for _ in range(50):  # 50 iterations covers full 64-bit float precision
+        base = root(base, 2)  # Square root is much faster than 10th root!
+        b *= 2
+        if b >= 1.0:
+            result *= base
+            b -= 1.0
+    return result
+
 def log(base, x, tolerance = 1e-15):
     a = m = 2.0
     scale = 2 / ln(base)
