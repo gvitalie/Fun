@@ -655,6 +655,19 @@ def root(x, k, tolerance = 1e-15):
         a -= m
     return a
 
+def nexp(x):
+    prod = a = 1
+    for i in range(1, 30):
+        prod *= x / i
+        a += prod
+    return a
+
+def ln(x):
+    a = 0
+    for _ in range(1, 30):
+        a -= 2 * (nexp(a) - x) / (nexp(a) + x)
+    return a
+
 def exp(base, x):
     a, b = str(float(x)).split(".")
     result = base ** int(a)
@@ -665,9 +678,10 @@ def exp(base, x):
 
 def log(base, x, tolerance = 1e-15):
     a = m = 2.0
+    scale = 2 / ln(base)
     while abs(m) > tolerance:
         t = exp(base, a)
-        m = 2 * (t - x) / (t + x)
+        m = scale * (t - x) / (t + x)
         a -= m
     return a
 
@@ -685,7 +699,7 @@ print(π ** π)
 /home/me/Pycharm/WelcomeScreen/.venv/bin/python script.py 
 3.0
 3.0
-9.999999999999995
+10.0
 1.4396194958475916
 1.4396194958475907
 36.46215960720791
