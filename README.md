@@ -656,12 +656,11 @@ def root(x, k, tolerance = 1e-15):
     return a
 
 def nexp(x, tolerance = 1e-15):
-    prod = a = m = i = 1
-    while abs(m) > tolerance:
-        m = x / i
-        prod *= m
+    prod = a = i = 1
+    while abs(prod) > tolerance:
+        prod *= x / i
         a += prod
-        i += i
+        i += 1
     return a
 
 def ln(x):
