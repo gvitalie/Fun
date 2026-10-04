@@ -648,28 +648,49 @@ me@amadeus:~$
 ```
 # That is amazing!
 ```Python
-def exp(base, x):
-    a, b = str(x).split(".")
-    c = base
-    result = 1
-    for i in b:
-        base = pow(base, 1/10)
-        result *= base ** int(i)
-    return result * (c ** int(a))
-
-def log(base, x):
-    a = 0.0
-    for _ in range(1, 100):
-        a -= (exp(base, a) - x) / (exp(base, a) + x)
+def root(x, k, tolerance = 1e-15):
+    a = m = 2.0
+    while abs(m) > tolerance:
+        m = (a ** k - x) / (k * a ** (k-1))
+        a -= m
     return a
 
-print(log(3, 27))
+def exp(base, x):
+    a, b = str(float(x)).split(".")
+    result = base ** int(a)
+    for i in b:
+        base = root(base, 10)
+        result *= base ** int(i)
+    return result
+
+def log(base, x, tolerance = 1e-15):
+    a = m = 2.0
+    while abs(m) > tolerance:
+        t = exp(base, a)
+        m = (t - x) / (t + x)
+        a -= m
+    return a
+
+from math import pi as π
+
+print(root(27, 3))
+print(log(2, 8))
 print(exp(2, log(2, 10)))
+print(exp(π, 1/π))
+print(π ** (1/π))
+print(exp(π, π))
+print(π ** π)
+
 ```
 ```Python
 /home/me/Pycharm/WelcomeScreen/.venv/bin/python script.py 
-3.0000000000000004
-10.0
+3.0
+2.9999999999999982
+9.999999999999988
+1.4396194958475916
+1.4396194958475907
+36.46215960720791
+36.4621596072079
 
 Process finished with exit code 0
 ```
