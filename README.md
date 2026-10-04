@@ -655,11 +655,13 @@ def root(x, k, tolerance = 1e-15):
         a -= m
     return a
 
-def nexp(x):
-    prod = a = 1
-    for i in range(1, 30):
-        prod *= x / i
+def nexp(x, tolerance = 1e-15):
+    prod = a = m = i = 1
+    while abs(m) > tolerance:
+        m = x / i
+        prod *= m
         a += prod
+        i += i
     return a
 
 def ln(x):
@@ -669,9 +671,9 @@ def ln(x):
     return a
 
 def exp(base, x):
-    a, b = str(float(x)).split(".")
-    result = base ** int(a)
-    for i in b:
+    a, b = int(x), x - int(x)
+    result = base ** a
+    for i in f'{b:.15f}'.split(".")[1]:
         base = root(base, 10)
         result *= base ** int(i)
     return result
@@ -690,20 +692,27 @@ from math import pi as π
 print(root(27, 3))
 print(log(2, 8))
 print(exp(2, log(2, 10)))
+
 print(exp(π, 1/π))
 print(π ** (1/π))
+
 print(exp(π, π))
 print(π ** π)
+
+print(log(2, 2 ** 10))
+print(exp(2, 10))
 ```
 ```Python
 /home/me/Pycharm/WelcomeScreen/.venv/bin/python script.py 
 3.0
 3.0
 10.0
-1.4396194958475916
+1.439619495847591
 1.4396194958475907
 36.46215960720791
 36.4621596072079
+10.0
+1024.0
 
 Process finished with exit code 0
 ```
