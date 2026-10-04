@@ -667,7 +667,7 @@ def log(base, x, tolerance = 1e-15):
     a = m = 2.0
     while abs(m) > tolerance:
         t = exp(base, a)
-        m = (t - x) / (t + x)
+        m = 2 * (t - x) / (t + x)
         a -= m
     return a
 
@@ -680,13 +680,12 @@ print(exp(π, 1/π))
 print(π ** (1/π))
 print(exp(π, π))
 print(π ** π)
-
 ```
 ```Python
 /home/me/Pycharm/WelcomeScreen/.venv/bin/python script.py 
 3.0
-2.9999999999999982
-9.999999999999988
+3.0
+9.999999999999995
 1.4396194958475916
 1.4396194958475907
 36.46215960720791
