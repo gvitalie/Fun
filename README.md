@@ -681,7 +681,7 @@ def root(x, k, tolerance = 1e-15):
         a -= m
     return a
 
-def exp(base, x):
+def bexp(base, x):
     if x < 0: return 1 / exp(base, -x)
     exponent = fbin(x)
 
@@ -725,7 +725,7 @@ def log(base, x, tolerance = 1e-15):
     a = m = 2.0
     scale = 2 / ln(base)
     while abs(m) > tolerance:
-        t = exp(base, a)
+        t = bexp(base, a)
         m = scale * (t - x) / (t + x)
         a -= m
     return a
@@ -736,20 +736,19 @@ if __name__ == "__main__":
 ```Python
 (.venv) me@amadeus:~/PycharmProjects/WelcomeScreen$ python -q # 🐍
 >>> from Aa import *
+>>> bexp(2, 3)
+8.0
+>>> dexp(2, 3)
+8.0
 >>> 
->>> exp(2, 2)
-4.0
->>> exp(8, 1/3)
-2.0000000000000058
->>> exp(2, 1/2)
+>>> bexp(2, 1/2)
 1.414213562373095
->>> 2 ** (1/2)
-1.4142135623730951
->>> 
->>> nexp(1/2 * ln(2))
-1.4142135623730956
 >>> dexp(2, 1/2)
 1.414213562373095
+>>> nexp(1/2 * ln(2))
+1.4142135623730956
+>>> 2 ** (1/2)
+1.4142135623730951
 >>> 
 >>> log(2, 2 ** 10)
 9.999999999999993
