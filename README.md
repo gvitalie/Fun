@@ -648,17 +648,15 @@ me@amadeus:~$
 ```
 # That is amazing!
 ```Python
-from fractions import Fraction
-
 def fbin(x):
-    a, b = int(x), Fraction(str(x)) - int(x)
+    a, b = int(x), x - int(x)
     result = list()
     result.append(bin(a)[2:])
     if not b:
         result.append("0")
         return result
     bits = ''
-    for _ in range(50):
+    for _ in range(52):
         b *= 2
         if b >= 1:
             bits += "1"
@@ -682,7 +680,7 @@ def root(x, k, tolerance = 1e-15):
     return a
 
 def bexp(base, x):
-    if x < 0: return 1 / bexp(base, -x)
+    if x < 0: return 1 / exp(base, -x)
     exponent = fbin(x)
 
     q = 1
@@ -729,6 +727,10 @@ def log(base, x, tolerance = 1e-15):
         t = bexp(base, a)
         m = scale * (t - x) / (t + x)
         a -= m
+    nearest_int = round(a)
+    if abs(a - nearest_int) < 1e-12:
+        return nearest_int
+
     return a
 
 if __name__ == "__main__":
@@ -752,9 +754,9 @@ if __name__ == "__main__":
 1.4142135623730951
 >>> 
 >>> log(2, 2 ** 10)
-9.999999999999993
+10
 >>> log(3, 27)
-2.9999999999999964
+3
 >>> 
 >>> fbin(1113.3)
 ['10001011001', '01001100110011001100110011001100110011001100110011']
