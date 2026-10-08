@@ -648,6 +648,32 @@ me@amadeus:~$
 ```
 # That is amazing!
 ```Python
+from fractions import Fraction
+
+def fbin(x):
+    a, b = int(x), Fraction(str(x)) - int(x)
+    result = list()
+    result.append(bin(a)[2:])
+    if not b:
+        result.append("0")
+        return result
+    bits = ''
+    for _ in range(50):
+        b *= 2
+        if b >= 1:
+            bits += "1"
+            b -= 1
+        else:
+            bits += "0"
+    result.append(bits)
+    return result
+
+def fnum(number):
+    q = int(number[0], 2)
+    r = sum([int(bit) * (2 ** -(idx + 1))
+             for idx, bit in enumerate((number[1]))])
+    return q + r
+
 def root(x, k, tolerance = 1e-15):
     a = m = 2.0
     while abs(m) > tolerance:
@@ -655,7 +681,23 @@ def root(x, k, tolerance = 1e-15):
         a -= m
     return a
 
+def exp(base, x):
+    if x < 0: return 1 / exp(base, -x)
+    exponent = fbin(x)
+
+    q = 1
+    for idx, bit in enumerate(exponent[0][::-1]):
+        q *= base ** (int(bit) * (2 ** idx))
+
+    r = 1
+    for bit in exponent[1]:
+        base = root(base, 2)
+        r *= base ** (int(bit))
+
+    return q * r
+
 def nexp(x, tolerance = 1e-15):
+    if x < 0: return 1 / nexp(-x)
     prod = a = i = 1
     while abs(prod) > tolerance:
         prod *= x / i
@@ -663,13 +705,7 @@ def nexp(x, tolerance = 1e-15):
         i += 1
     return a
 
-def ln(x):
-    a = 0
-    for _ in range(1, 30):
-        a -= 2 * (nexp(a) - x) / (nexp(a) + x)
-    return a
-
-def exp(base, x):
+def dexp(base, x):
     a, b = int(x), x - int(x)
     result = base ** a
     for i in f'{b:.15f}'.split(".")[1]:
@@ -677,18 +713,13 @@ def exp(base, x):
         result *= base ** int(i)
     return result
 
-
-def exp_binary(base, x):
-    a, b = int(x), x - int(x)
-    result = base ** a
-    # Repeatedly take square roots instead of 10th roots
-    for _ in range(50):  # 50 iterations covers full 64-bit float precision
-        base = root(base, 2)  # Square root is much faster than 10th root!
-        b *= 2
-        if b >= 1.0:
-            result *= base
-            b -= 1.0
-    return result
+def ln(x, tolerance = 1e-15):
+    a = m = 1.0
+    while abs(m) > tolerance:
+        t = nexp(a)
+        m = 2 * (t - x) / (t + x)
+        a -= m
+    return a
 
 def log(base, x, tolerance = 1e-15):
     a = m = 2.0
@@ -699,34 +730,31 @@ def log(base, x, tolerance = 1e-15):
         a -= m
     return a
 
-from math import pi as π
-
-print(root(27, 3))
-print(log(2, 8))
-print(exp(2, log(2, 10)))
-
-print(exp(π, 1/π))
-print(π ** (1/π))
-
-print(exp(π, π))
-print(π ** π)
-
-print(log(2, 2 ** 10))
-print(exp(2, 10))
+if __name__ == "__main__":
+    pass
 ```
 ```Python
-/home/me/Pycharm/WelcomeScreen/.venv/bin/python script.py 
-3.0
-3.0
-10.0
-1.439619495847591
-1.4396194958475907
-36.46215960720791
-36.4621596072079
-10.0
-1024.0
-
-Process finished with exit code 0
+(.venv) me@amadeus:~/PycharmProjects/WelcomeScreen$ python -q # 🐍
+>>> from Aa import *
+>>> exp(2, 2)
+4.0
+>>> exp(8, 1/3)
+2.0000000000000058
+>>> exp(2, 1/2)
+1.414213562373095
+>>> 2 ** (1/2)
+1.4142135623730951
+>>> 
+>>> log(2, 1024)
+9.999999999999993
+>>> log(3, 27)
+2.9999999999999964
+>>> 
+>>> fbin(1113.3)
+['10001011001', '01001100110011001100110011001100110011001100110011']
+>>> fnum(_)
+1113.3
+>>> 
 ```
 
 # Primes and Composites
