@@ -682,7 +682,7 @@ def root(x, k, tolerance = 1e-15):
     return a
 
 def bexp(base, x):
-    if x < 0: return 1 / exp(base, -x)
+    if x < 0: return 1 / bexp(base, -x)
     exponent = fbin(x)
 
     q = 1
@@ -706,6 +706,7 @@ def nexp(x, tolerance = 1e-15):
     return a
 
 def dexp(base, x):
+    if x < 0: return 1 / dexp(base, -x)
     a, b = int(x), x - int(x)
     result = base ** a
     for i in f'{b:.15f}'.split(".")[1]:
